@@ -28,8 +28,10 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
+        pip install flake8 pytest pytest-cov
         pip install -r requirements.txt
+        python manage.py migrate
+
 
     - name: Lint
       run: |
@@ -42,6 +44,6 @@ jobs:
 
     - name: Run unit tests with pytest
       run: |
-        pytest -v ./accounts/tests.py
-        pytest -v ./lists/tests.py
-        pytest -v ./api/tests.py
+        pytest -v ./accounts/tests.py --cov=. --cov-report=term-missing --cov-report=json
+        pytest -v ./lists/tests.py --cov=. --cov-report=term-missing --cov-report=json
+        pytest -v ./api/tests.py --cov=. --cov-report=term-missing --cov-report=json
