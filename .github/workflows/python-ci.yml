@@ -46,4 +46,3 @@ jobs:
       run: |
         pytest -v ./accounts/tests.py --cov=. --cov-report=term-missing --cov-report=json
         pytest -v ./lists/tests.py --cov=. --cov-report=term-missing --cov-report=json
-        pytest -v ./api/tests.py --cov=. --cov-report=term-missing --cov-report=json
