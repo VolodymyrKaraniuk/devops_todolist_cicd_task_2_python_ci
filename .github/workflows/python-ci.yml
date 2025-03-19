@@ -42,6 +42,6 @@ jobs:
 
     - name: Run unit tests with pytest
       run: |
-        pytest ./api/tests.py
-        pytest ./accounts/tests.py
-        pytest ./lists/tests.py
+        pytest -v ./accounts/tests.py
+        pytest -v ./lists/tests.py
+        pytest -v ./api/tests.py
